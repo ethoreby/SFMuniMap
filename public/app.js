@@ -33,5 +33,23 @@ d3.json('streets.json', function(err, data) {
   svg.append('path')
     .datum(data)
     .attr('d', path)
-    .style('fill', '#999999');
+    .style('fill', 'green');
+});
+
+d3.json('arteries.json', function(err, data) {
+  if(err) return console.log(err);
+
+  svg.append('path')
+    .datum(data)
+    .attr('d', path)
+    .style('fill', 'blue');
+});
+
+d3.json('freeways.json', function(err, data) {
+  if(err) return console.log(err);
+
+  svg.append('path')
+    .datum(data)
+    .attr('d', path)
+    .style('fill', 'red');
 });
