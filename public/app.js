@@ -4,18 +4,15 @@ var width = 800;
 var svg = d3.select('body').append('svg')
   .attr({width: width, height: height});
 
-svg.append("rect")
-  .attr("width", "100%")
-  .attr("height", "100%")
-  .attr("fill", "blue");
-
-////////
+svg.append('rect')
+  .attr('width', '100%')
+  .attr('height', '100%')
+  .attr('fill', '#66CCFF');
 
 var projection = d3.geo.albers()
-    .center([0, 37.7833])
-    .rotate([122.4167, 0])
-    // .parallels([37, 38])
-    .scale(200000)
+    .center([0, 37.768544])
+    .rotate([122.427521, 0])
+    .scale(250000)
     .translate([width / 2, height / 2]);
 
 var path = d3.geo.path()
@@ -24,10 +21,17 @@ var path = d3.geo.path()
 d3.json('neighborhoods.json', function(err, data) {
   if(err) return console.log(err);
 
-  console.log(data);
-
-  svg.append("path")
+  svg.append('path')
     .datum(data)
-    .attr("d", path)
-    .style("fill", "red");
+    .attr('d', path)
+    .style('fill', '#999999');
+});
+
+d3.json('streets.json', function(err, data) {
+  if(err) return console.log(err);
+
+  svg.append('path')
+    .datum(data)
+    .attr('d', path)
+    .style('fill', '#999999');
 });
