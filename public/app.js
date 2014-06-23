@@ -18,38 +18,35 @@ var projection = d3.geo.albers()
 var path = d3.geo.path()
     .projection(projection);
 
-d3.json('neighborhoods.json', function(err, data) {
+var drawCity = function(pathType) {
+  
+  var reference = {
+    'neighborhoods': '#999999',
+    'streets': 'green',
+    'arteries': 'blue',
+    'freeways': 'red'
+  }
+
+  d3.json(pathType + '.json', function(err, data) {
   if(err) return console.log(err);
 
   svg.append('path')
     .datum(data)
     .attr('d', path)
-    .style('fill', '#999999');
-});
+    .style('fill', reference[pathType]);
+  });
+}
 
-d3.json('streets.json', function(err, data) {
-  if(err) return console.log(err);
+drawCity('neighborhoods');
+drawCity('streets');
+drawCity('arteries');
+drawCity('freeways');
 
-  svg.append('path')
-    .datum(data)
-    .attr('d', path)
-    .style('fill', 'green');
-});
 
-d3.json('arteries.json', function(err, data) {
-  if(err) return console.log(err);
 
-  svg.append('path')
-    .datum(data)
-    .attr('d', path)
-    .style('fill', 'blue');
-});
 
-d3.json('freeways.json', function(err, data) {
-  if(err) return console.log(err);
 
-  svg.append('path')
-    .datum(data)
-    .attr('d', path)
-    .style('fill', 'red');
-});
+
+
+
+
