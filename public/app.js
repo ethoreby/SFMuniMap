@@ -18,6 +18,7 @@ var projection = d3.geo.albers()
 var path = d3.geo.path()
   .projection(projection);
 
+var x2js = new X2JS();
 
 var app = angular.module('app', []);
 
@@ -59,7 +60,8 @@ app.controller('MainController', function($scope, $q, $http) {
 
   $http.get('http://webservices.nextbus.com/service/publicXMLFeed?command=routeList&a=sf-muni')
   .then(function(data) {
-    console.log(data);
+    var jsonObj = x2js.xml_str2json(data.data);
+    console.log(jsonObj);
   });
 
 });
