@@ -1,13 +1,23 @@
 body {
   background-color: #999999;
+  font-family: monospace;
 }
 
 h1 {
   color: white;
-  font-family: monospace;
 }
 
 svg {
   border: 3px solid orangered;
   border-radius: 20px;
+}
+
+.route {
+  background-color: white;
+  margin: 2px;
+  float: left;
+  padding: 4px;
+  border: 1px solid orangered;
+  border-radius: 6px;
+  font-size: 10px;
 }
