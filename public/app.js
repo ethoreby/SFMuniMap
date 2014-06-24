@@ -21,10 +21,10 @@ var path = d3.geo.path()
 
 var app = angular.module('app', []);
 
-app.controller('MainController', function($scope, $q) {
+app.controller('MainController', function($scope, $q, $http) {
 
   var drawCity = function(pathType) {
-    
+
     var reference = {
       'neighborhoods': '#999999',
       'streets': 'green',
@@ -48,17 +48,19 @@ app.controller('MainController', function($scope, $q) {
 
   drawCity('neighborhoods')
   .then(function() {
-    console.log('streets');
     return drawCity('streets');
   })
   .then(function() {
-    console.log('artery');
     return drawCity('arteries')
   })
   .then(function() {
-    console.log('freeway');
     return drawCity('freeways');  
   })
+
+  $http.get('http://webservices.nextbus.com/service/publicXMLFeed?command=routeList&a=sf-muni')
+  .then(function(data) {
+    console.log(data);
+  });
 
 });
 
