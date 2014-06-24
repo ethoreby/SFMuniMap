@@ -41,3 +41,7 @@ svg {
   border-radius: 6px;
   font-size: 10px;
 }
+
+.route:hover {
+  background-color: yellow;
+}

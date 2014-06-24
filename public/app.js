@@ -56,7 +56,7 @@ app.controller('MainController', function($scope, $q, $http) {
   })
   .then(function() {
     return drawCity('freeways');  
-  })
+  });
 
   $http.get('http://webservices.nextbus.com/service/publicXMLFeed?command=routeList&a=sf-muni')
   .then(function(data) {
