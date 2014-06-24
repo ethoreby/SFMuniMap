@@ -63,6 +63,10 @@ app.controller('MainController', function($scope, $q, $http) {
     $scope.routes = (x2js.xml_str2json(data.data)).body.route;
   });
 
+  $scope.setActive = function(routeName) {
+    $scope.highlightRoute = routeName;
+  }
+
 });
 
 

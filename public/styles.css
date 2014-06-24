@@ -28,6 +28,10 @@ svg {
   float: left;
 }
 
+.routes {
+  padding-top: 50px;
+}
+
 .route {
   background-color: white;
   margin: 2px;
