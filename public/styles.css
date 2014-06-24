@@ -12,6 +12,18 @@ svg {
   border-radius: 20px;
 }
 
+.clearFloat {
+  clear: both;
+}
+
+.display {
+  float: left;
+}
+
+.routeInfo {
+  float: left;
+}
+
 .route {
   background-color: white;
   margin: 2px;
