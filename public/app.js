@@ -58,7 +58,12 @@ app.controller('MainController', function($scope, $q, $http) {
     return drawCity('freeways');  
   });
 
-  $http.get('http://webservices.nextbus.com/service/publicXMLFeed?command=routeList&a=sf-muni')
+  // $http.get('http://webservices.nextbus.com/service/publicXMLFeed?command=routeList&a=sf-muni')
+  // .then(function(data) {
+  //   $scope.routes = (x2js.xml_str2json(data.data)).body.route;
+  // });
+
+  $http.get('http://webservices.nextbus.com/service/publicXMLFeed?command=routeConfig&a=sf-muni')
   .then(function(data) {
     $scope.routes = (x2js.xml_str2json(data.data)).body.route;
   });

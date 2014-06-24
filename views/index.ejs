@@ -17,7 +17,7 @@
 
       <div class="routeInfo">
         <h2 class="selected">{{highlightRoute}}</h2>
-        <label>Filter routes: </label><input ng-model="routeFilter"></input>
+        <label>Filter routes: </label><input ng-model="routeFilter._title"></input>
         <hr>
       </div>
     </div>
@@ -25,7 +25,7 @@
     <div class="display"></div>
 
     <div class="routes">
-      <div class="route" ng-repeat="route in routes | filter:routeFilter" ng-mouseover="setActive(route._title)">{{route._title}}</div>
+      <div class="route" ng-repeat="route in routes | filter : routeFilter" ng-mouseover="setActive(route._title)">{{route._title}}</div>
     </div>
     
     <script src="app.js"></script>
