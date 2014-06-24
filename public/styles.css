@@ -16,11 +16,15 @@ svg {
   clear: both;
 }
 
-.display {
-  float: left;
+.header {
+  height: 100px;
 }
 
 .routeInfo {
+  float: right;
+}
+
+.display, .title {
   float: left;
 }
 

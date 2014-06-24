@@ -9,13 +9,21 @@
   </head>
 
   <body ng-app="app" ng-controller="MainController">
-    <div class="display"></div>
-    <div class="routeInfo">
-      <h1>San Francisco Muni Map</h1>
-      <label>Filter routes: </label><input ng-model="routeFilter"></input>
 
+    <div class="header">
+      <div class="title">
+        <h1>San Francisco Muni Map</h1>
+      </div>
+
+      <div class="routeInfo">
+        <h2 class="selected">{{highlightRoute}}</h2>
+        <label>Filter routes: </label><input ng-model="routeFilter"></input>
+        <hr>
+      </div>
     </div>
     
+    <div class="display"></div>
+
     <div class="routes">
       <div class="route" ng-repeat="route in routes | filter:routeFilter">{{route._title}}</div>
     </div>

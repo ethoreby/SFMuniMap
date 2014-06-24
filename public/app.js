@@ -1,5 +1,5 @@
-var height = 650;
-var width = 650;
+var height = 580;
+var width = 600;
 
 var svg = d3.select('.display').append('svg')
   .attr({width: width, height: height});
