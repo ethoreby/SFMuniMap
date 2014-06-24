@@ -60,8 +60,7 @@ app.controller('MainController', function($scope, $q, $http) {
 
   $http.get('http://webservices.nextbus.com/service/publicXMLFeed?command=routeList&a=sf-muni')
   .then(function(data) {
-    var jsonObj = x2js.xml_str2json(data.data);
-    console.log(jsonObj);
+    $scope.routes = (x2js.xml_str2json(data.data)).body.route;
   });
 
 });
